@@ -4,11 +4,11 @@ import s from "./Dialogs.module.css"
 
 type DialogItemType = {
     name: string
-    id: string
+    id: number
 }
 
 type MessageType = {
-message: string
+    message: string
 }
 
 const DialogItem = (props: DialogItemType) => {
@@ -22,24 +22,31 @@ const Message = (props: MessageType) => {
 }
 
 const Dialogs = () => {
+
+    let dialogs = [
+        {id: 1, name: "Valera"},
+        {id: 2, name: "Viktor"},
+        {id: 3, name: "Dimas"},
+        {id: 4, name: "Artsyom"},
+        {id: 5, name: "Bob"},
+        {id: 6, name: "Vector"},
+        {id: 7, name: "Sasha"}
+    ]
+
+    let messages = [
+        {id: 1, message: "Hi"},
+        {id: 2, message: "How are you?"},
+        {id: 3, message: "Yo"},
+        {id: 4, message: "Yo!"}
+    ]
+
+    let dialogsElements = dialogs.map(d => <DialogItem name={d.name} id={d.id}/>)
+    let messagesElements = messages.map(m => <Message message={m.message}/>)
+
     return (
         <div className={s.dialogs}>
-            <div className={s.dialogsItem}>
-                <DialogItem name="Valera" id="1"/>
-                <DialogItem name="Viktor" id="2"/>
-                <DialogItem name="Dimas" id="3"/>
-                <DialogItem name="Artsyom" id="4"/>
-                <DialogItem name="Bob" id="5"/>
-                <DialogItem name="Vector" id="6"/>
-                <DialogItem name="Sasha" id="7"/>
-            </div>
-            <div className={s.messages}>
-                <Message message="Hi"/>
-                <Message message="How are you?"/>
-                <Message message="Yo"/>
-                <Message message="YoYoyo!!"/>
-            </div>
-
+            <div className={s.dialogsItem}>{dialogsElements}</div>
+            <div className={s.messages}>{messagesElements}</div>
         </div>
     )
 }
