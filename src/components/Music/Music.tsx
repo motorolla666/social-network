@@ -5,7 +5,7 @@ import React from 'react';
 const Music = (props:any) => {
     return(
         <div >
-            Music
+            Work in progress
         </div>
     )
 }

@@ -5,7 +5,7 @@ import React from 'react';
 const News = (props:any) => {
     return(
         <div >
-            News
+            Work in progress
         </div>
     )
 }

@@ -5,7 +5,7 @@ import React from 'react';
 const Settings = (props:any) => {
     return(
         <div >
-            Settings
+            Work in progress
         </div>
     )
 }
